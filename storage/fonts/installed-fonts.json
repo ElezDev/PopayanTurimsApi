@@ -1,0 +1,17 @@
+{
+    "nunito": {
+        "normal": "nunito_normal_586f3f8a461df5c8635a870033365d5e"
+    },
+    "font awesome 5 brands": {
+        "normal": "font_awesome_5_brands_normal_a0fbaa64df4cb249ba57759d43e96e0a"
+    },
+    "font awesome 5 free": {
+        "normal": "C:\\xampp\\htdocs\\popayanturims\\storage\\fonts\/font_awesome_5_free_normal_46571a1914f09cb5e0deafe0700bc8ef",
+        "900": "font_awesome_5_free_900_ff8db70e9b647bc2fd26ac94e3718c56"
+    },
+    "source sans pro": {
+        "300_italic": "C:\\xampp\\htdocs\\popayanturims\\storage\\fonts\/source_sans_pro_300_italic_c7348df81e49066b772a98ae20e45811",
+        "italic": "C:\\xampp\\htdocs\\popayanturims\\storage\\fonts\/source_sans_pro_italic_27672a92dcedb2218abd2dadee4fe950",
+        "600_italic": "source_sans_pro_600_italic_ef3fecfa74b416f01e1908b6dca4e4a4"
+    }
+}
