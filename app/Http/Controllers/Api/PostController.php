@@ -56,8 +56,8 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        Request()->validate(Post::$rules);
-        $post= Post::update($request->all());
+        request()->validate(Post::$rules);
+        $post->update($request->all());
         return $post;
     }
 

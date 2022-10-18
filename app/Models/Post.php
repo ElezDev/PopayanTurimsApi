@@ -26,7 +26,7 @@ class Post extends Model
 
     Protected $allowIncluded = ['Users','images'];
     protected $allowFilter = ['Contenido','id'];
-    protected $allowSort = ['id', 'Contenido'];
+    protected $allowSort = ['id', 'Contenido','users_id'];
 
 protected $guarded=[];
 

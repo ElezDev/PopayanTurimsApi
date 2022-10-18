@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
 class Servicio extends Model
 {
 
-    Protected $allowIncluded = ['lugars','tiposervicio'];
+    Protected $allowIncluded = ['lugars','tiposervicio.servicio'];
     protected $allowFilter = ['nombre'];
     protected $allowSort = ['id', 'nombre'];
 

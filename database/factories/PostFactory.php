@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Factories;
-use\App\Models\User;
+use App\Models\User;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -16,7 +16,7 @@ class PostFactory extends Factory
     {
         return [
             'Contenido' => $this->faker->sentence(),
-            'users_id' =>  User::inRandomOrder()->first()->id,
+            'users_id' =>  User::inRandomOrder()->first()->id
         ];
     }
 }
