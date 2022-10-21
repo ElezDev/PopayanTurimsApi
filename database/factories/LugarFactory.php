@@ -27,7 +27,7 @@ class LugarFactory extends Factory
             'direccion'=> $this->faker->sentence(),
             'horarios'=> $this->faker->sentence(),
             'descripcion'=>$this->faker->sentence(),
-            'foto_url'=>$this->faker->sentence(),
+            'foto_url'=>$this->faker->imageUrl(800,600),
 
             'tipolugar_id'=> Tipolugar::inRandomOrder()->first()->id,
 

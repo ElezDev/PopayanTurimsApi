@@ -20,6 +20,7 @@ class TipoServicioController extends Controller
         ->filter()
         ->sort()
         ->get();
+        
         return $tiposervicio;
 
     }
