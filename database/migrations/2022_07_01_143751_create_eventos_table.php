@@ -16,10 +16,11 @@ class CreateEventosTable extends Migration
         Schema::create('eventos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('ubucacion');
-            $table->string('horarios');
-            $table->string('fechainicio');
-            $table->string('fechafin');
+            $table->string('ubicacion');
+            $table->string('horarios')->nullable();;
+            $table->string('fechainicio')->nullable();;
+            $table->string('fechafin')->nullable();;
+            $table->string('foto_url')->nullable();
             $table->timestamps();
 
             $table->unsignedBigInteger('tipoeventos_id')->unsigned();

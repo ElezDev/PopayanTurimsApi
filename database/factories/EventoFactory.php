@@ -15,11 +15,12 @@ class EventoFactory extends Factory
     {
         return [
             'nombre'  => $this->faker->sentence(),
-            'ubucacion'  => $this->faker->sentence(),
+            'ubicacion'  => $this->faker->sentence(),
             'horarios' => $this->faker->sentence(),
             'fechainicio'  => $this->faker->sentence(),
             'fechafin'  => $this->faker->sentence(),
-            'tipoeventos_id' => Tipoevento::inRandomOrder()->first()->id
+            'tipoeventos_id' => Tipoevento::inRandomOrder()->first()->id,
+            'foto_url'=>$this->faker->imageUrl(800,600),
         ];
     }
 }

@@ -33,11 +33,12 @@ class Evento extends Model
 
     static $rules = [
 		'nombre' => 'required',
-		'ubucacion' => 'required',
+		'ubicacion' => 'required',
 		'horarios' => 'required',
 		'fechainicio' => 'required',
 		'fechafin' => 'required',
 		'tipoeventos_id' => 'required',
+       ' foto_url'=>'required'
     ];
 
     protected $perPage = 20;
@@ -47,7 +48,7 @@ class Evento extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre','ubucacion','horarios','fechainicio','fechafin','tipoeventos_id'];
+    protected $fillable = ['nombre','ubicacion','horarios','fechainicio','fechafin','tipoeventos_id'];
 
 
     /**
