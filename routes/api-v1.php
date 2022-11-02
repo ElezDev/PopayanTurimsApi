@@ -18,6 +18,7 @@ use App\Http\Controllers\Api\RutaController;
 use App\Http\Controllers\Api\ServicioController;
 use App\Http\Controllers\Api\TipoEventoController;
 use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\LoguinController;
 
 
 
@@ -41,4 +42,4 @@ use App\Http\Controllers\Api\PostController;
  Route::apiResource('ruta',RutaController::class)->names('api.v1.ruta');
  Route::apiResource('post',PostController::class)->names('api.v1.post');
 
-
+ Route::post('loguin', [LoguinController::class,'store'])->name('api.v1.loguin');
