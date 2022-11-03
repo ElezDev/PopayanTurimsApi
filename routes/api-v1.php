@@ -19,12 +19,8 @@ use App\Http\Controllers\Api\ServicioController;
 use App\Http\Controllers\Api\TipoEventoController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\LoguinController;
-
-
-
-
-
-
+use App\Http\Controllers\Api\Permission;
+use App\Http\Controllers\Api\RolsController;
 
  Route::post('register', [RegisterController::class,'store'])->name('api.v1.register');
  Route::apiResource('user',UserController::class)->names('api.v1.users');
@@ -41,5 +37,11 @@ use App\Http\Controllers\Api\LoguinController;
  Route::apiResource('mapa',MapaController::class)->names('api.v1.mapa');
  Route::apiResource('ruta',RutaController::class)->names('api.v1.ruta');
  Route::apiResource('post',PostController::class)->names('api.v1.post');
+ Route::apiResource('permission',Permission::class)->names('api.v1.permission');
 
- Route::post('loguin', [LoguinController::class,'store'])->name('api.v1.loguin');
+ Route::apiResource('rols',RolsController::class)->names('api.v1.rols');
+
+ Route::post('loguin', [RegisterController::class,'loguin'])->name('api.v1.loguin');
+
+ Route::post('logueo', [LoguinController::class,'loguin'])->name('api.v1.logueo');
+

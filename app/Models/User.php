@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 //use Laravel\Sanctum\HasApiTokens;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -63,13 +64,14 @@ class User extends Authenticatable
 
 
     public function adminlte_image(){
-        return 'https://picsum.photos/300/300';
+        return Auth::user()->Avatar;
+        // return 'https://picsum.photos/300/300';
 
     }
 
 
     public function adminlte_desc(){
-        return 'Administrador';
+        return Auth::user()->rols;
 
 
     }
