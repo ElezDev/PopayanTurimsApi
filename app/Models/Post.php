@@ -31,7 +31,7 @@ class Post extends Model
 protected $guarded=[];
 
     static $rules = [
-
+        'img_post' => 'required',
 		'Contenido' => 'required',
 		'users_id' => 'required',
     ];
@@ -54,11 +54,11 @@ protected $guarded=[];
         return $this->belongsTo('App\Models\User');
     }
 
-public function images(){
+// public function images(){
 
-  return $this->morphMany('App\Models\Image','imageable');
+//   return $this->morphMany('App\Models\Image','imageable');
 
-}
+// }
 
 
 public function scopeIncluded(Builder $query)

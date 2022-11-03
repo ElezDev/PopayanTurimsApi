@@ -16,7 +16,8 @@ class PostFactory extends Factory
     {
         return [
             'Contenido' => $this->faker->sentence(),
-            'users_id' =>  User::inRandomOrder()->first()->id
+            'users_id' =>  User::inRandomOrder()->first()->id,
+            'img_post'=>$this->faker->imageUrl(800,600),
         ];
     }
 }
