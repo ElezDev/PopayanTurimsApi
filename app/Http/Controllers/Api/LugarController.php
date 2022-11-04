@@ -31,10 +31,16 @@ class LugarController extends Controller
     public function store(Request $request)
     {
 
-        Request()->validate(Lugar::$rules);
-        $lugar = Lugar::create($request->all());
-        return $lugar;
+        $lugar = $request->all();
 
+
+        $file=$request->file("foto_url");
+        $nombreArchivo = "img_".time().".".$file->guessExtension();
+        $request->file('foto_url')->storeAs('public/Fotos', $nombreArchivo );
+        $lugar['foto_url']= "$nombreArchivo";
+        Lugar::create($lugar);
+        return $lugar;
+           
     }
 
     /**
