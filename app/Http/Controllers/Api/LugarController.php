@@ -32,8 +32,6 @@ class LugarController extends Controller
     {
 
         $lugar = $request->all();
-
-
         $file=$request->file("foto_url");
         $nombreArchivo = "img_".time().".".$file->guessExtension();
         $request->file('foto_url')->storeAs('public/Fotos', $nombreArchivo );
@@ -64,8 +62,14 @@ class LugarController extends Controller
      */
     public function update(Request $request, Lugar $lugar)
     {
-        request()->validate(Lugar::$rules);
-        $lugar->update($request->all());
+
+        
+        $lugar = $request->all();
+        $file=$request->file("foto_url");
+        $nombreArchivo = "img_".time().".".$file->guessExtension();
+        $request->file('foto_url')->storeAs('public/Fotos', $nombreArchivo );
+        $lugar['foto_url']= "$nombreArchivo";
+        Lugar::Update($lugar);
         return $lugar;
     }
 

@@ -60,10 +60,11 @@ class TipoServicioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Tiposervicio $tiposervicio)
-    {
-        request()->validate(Tiposervicio::$rules);
-        $tiposervicio->update($request->all());
-        return $tiposervicio;
+    {     
+         $request->validate([
+        'nombre' => 'required|',
+          ]);
+      $tiposervicio->update($request->all());
     }
 
     /**

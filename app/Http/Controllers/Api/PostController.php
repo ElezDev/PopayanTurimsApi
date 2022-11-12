@@ -31,9 +31,18 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        Request()->validate(Post::$rules);
-        $post= Post::create($request->all());
+
+        $post = $request->all();
+        $file=$request->file("img_post");
+        $nombreArchivo = "img_".time().".".$file->guessExtension();
+        $request->file('img_post')->storeAs('public/Fotos_post', $nombreArchivo );
+        $post['img_post']= "$nombreArchivo";
+        Post::create($post);
         return $post;
+           
+        // Request()->validate(Post::$rules);
+        // $post= Post::create($request->all());
+        // return $post;
     }
 
     /**

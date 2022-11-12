@@ -57,9 +57,19 @@ class ServicioController extends Controller
     public function update(Request $request, Servicio $servicio)
     {
 
-        Request()->validate(Servicio::$rules);
-        $servicio= Servicio::update($request->all());
-        return $servicio;
+        // Request()->validate(Servicio::$rules);
+        // $servicio= Servicio::update($request->all());
+        // return $servicio;
+        $request->validate([
+                'nombre' => 'required|',
+                'descripcion' => 'required|',
+                'ubicacion' => 'required|',
+                'horarios' => 'required|',
+                'tiposervicio_id' => 'required|',
+        ]);
+
+        $servicio->update($request->all());
+
 
     }
 
@@ -71,7 +81,7 @@ class ServicioController extends Controller
      */
     public function destroy(Servicio $servicio)
     {
-        $servicio -> delete();
+        $servicio->delete();
         return $servicio;
     }
 }

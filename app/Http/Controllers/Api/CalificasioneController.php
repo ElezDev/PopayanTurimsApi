@@ -60,8 +60,14 @@ class CalificasioneController extends Controller
      */
     public function update(Request $request, Calificasione $calificasione)
     {
-        Request()->validate(Calificasione::$rules);
-        $calificasione = Calificasione::update($request->all());
+       
+        $request->validate([
+            'comentarios' => 'required|',
+            'reseñas' => 'required|',
+        ]);
+
+        $calificasione->update($request->all());
+
         return $calificasione;
     }
 

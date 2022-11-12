@@ -30,11 +30,6 @@ class Post extends Model
 
 protected $guarded=[];
 
-    static $rules = [
-        'img_post' => 'required',
-		'Contenido' => 'required',
-		'users_id' => 'required',
-    ];
 
     protected $perPage = 20;
 
@@ -43,7 +38,7 @@ protected $guarded=[];
      *
      * @var array
      */
-    protected $fillable = ['Contenido','users_id'];
+    protected $fillable = ['Contenido','users_id','img_post'];
 
 
     /**

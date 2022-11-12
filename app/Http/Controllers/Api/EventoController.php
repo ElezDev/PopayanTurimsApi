@@ -31,9 +31,14 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        Request()->validate(Evento::$rules);
-        $evento = Evento::create($request->all());
-        return $evento;
+
+        $evento = $request->all();
+        $file=$request->file("foto_url");
+        $nombreArchivo = "img_".time().".".$file->guessExtension();
+        $request->file('foto_url')->storeAs('public/Fotos_Evento', $nombreArchivo );
+        $evento['foto_url']= "$nombreArchivo";
+        Evento::create($evento);
+         return $evento;
     }
 
     /**
@@ -58,8 +63,17 @@ class EventoController extends Controller
     public function update(Request $request, Evento $evento)
     {
 
-        Request()->validate(Evento::$rules);
-        $evento = Evento::update($request->all());
+        $request->validate([
+            'nombre' => 'required',
+            'ubicacion' => 'required',
+            'horarios' => 'required',
+            'fechainicio' => 'required',
+            'fechafin' => 'required',
+            'tipoeventos_id' => 'required',
+           ' foto_url'=>'required'
+        ]);
+
+        $evento->update($request->all());
         return $evento;
 
     }
@@ -70,9 +84,10 @@ class EventoController extends Controller
      * @param  \App\Models\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Evento $evento)
+    public function destroy(Evento $Evento)
+
     {
-        $evento->delete();
-        return $evento;
+        $Evento->delete();
+        return $Evento;
     }
 }
